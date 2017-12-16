@@ -4,17 +4,19 @@ angular.module('video-player')
     videos: '<'
   },
 
+  controller: function () {
+
+  },
+
   template: 
   `<h3>RECOMMENDED FOR YOU...</h3>
-    <video-list-entry 
-      index="$index" 
-      video="video"
-      ng-repeat="video in $ctrl.videos track by $index"
-    />
-  
-
-
-  `
+    <ul>
+      <video-list-entry
+        video="video"
+        index="$index"
+        ng-repeat="video in $ctrl.videos track by $index"
+      />
+    </ul>`
 });
 
 // `<ul class="video-list">

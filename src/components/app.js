@@ -1,6 +1,11 @@
 angular.module('video-player')
 
 .component('app', {
+
+  controller: function() {
+    this.videos = window.exampleVideoData;
+  },
+
   template: 
   `<div id="app container">
     <nav class="navbar">
@@ -13,7 +18,7 @@ angular.module('video-player')
         <video-player><h5><em>videoPlayer</em> component goes here</h5></video-player>
       </div>
       <div class="col-md-5">
-        <video-list video-collection="window.exampleVideoData"><h5><em>videoList</em> component goes here</h5></video-list>
+        <video-list videos="$ctrl.videos"><h5><em>videoList</em> component goes here</h5></video-list>
       
       </div>
     <div>
