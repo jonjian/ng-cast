@@ -166,3 +166,5 @@ window.exampleVideoData = [{
     liveBroadcastContent: "none"
   }
 }];
+
+window.exampleVideoData = exampleVideoData;
