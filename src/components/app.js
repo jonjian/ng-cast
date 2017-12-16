@@ -10,8 +10,8 @@ angular.module('video-player')
     };//will be our on-click. Will change current video
     this.searchResults = (data) => {
       this.videos = data;
+      this.currentVideo = this.videos[0];
     };
-    this.currentVideo = this.videos[0];
   },
 
   template: 

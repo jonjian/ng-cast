@@ -2,26 +2,19 @@ angular.module('video-player')
 .service('youTube', function($http) {
   // TODO
   this.search = function (query, callback) {
-    $http.get('https://www.googleapis.com/youtube/v3/search', {
+    $http({url: 'https://www.googleapis.com/youtube/v3/search',
       params: {
-        url: 'https://www.googleapis.com/youtube/v3/search',
-        method: 'GET',
         key: YOUTUBE_API_KEY,
         type: 'video',
         maxResults: 5,
         part: 'snippet',
         q: query,
         data: 'json',
-        success: function(data) {
-          callback(data);
-          console.log('IT WORKS! mom get the camera');
-        },
-        error: function(error) {
-          console.log(error);
-        }
-      }
+        videoEmbeddable: 'true'
+      },
+      method: 'GET'
+    }).then( (response) => { callback(response.data.items); });
 
-    });
   };
 });
 
