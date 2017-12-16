@@ -4,6 +4,11 @@ angular.module('video-player')
 
   controller: function() {
     this.videos = window.exampleVideoData;
+    this.selectVideo = (index) => {
+      this.currentVideo = this.videos[index];
+    };//will be our on-click. Will change current video
+    this.searchResults = () => {};
+    this.currentVideo = this.videos[0];
   },
 
   template: 
@@ -15,10 +20,10 @@ angular.module('video-player')
     </nav>
     <div class="row">
       <div class="col-md-7">
-        <video-player><h5><em>videoPlayer</em> component goes here</h5></video-player>
+        <video-player video="$ctrl.currentVideo"><h5><em>videoPlayer</em> component goes here</h5></video-player>
       </div>
       <div class="col-md-5">
-        <video-list videos="$ctrl.videos"><h5><em>videoList</em> component goes here</h5></video-list>
+        <video-list videos="$ctrl.videos" select-video="$ctrl.selectVideo"><h5><em>videoList</em> component goes here</h5></video-list>
       
       </div>
     <div>

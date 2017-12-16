@@ -1,11 +1,11 @@
 angular.module('video-player')
 .component('videoList', {
   bindings: {
-    videos: '<'
+    videos: '<',
+    selectVideo: '<'
   },
 
   controller: function () {
-
   },
 
   template: 
@@ -14,6 +14,7 @@ angular.module('video-player')
       <video-list-entry
         video="video"
         index="$index"
+        on-click="$ctrl.selectVideo"
         ng-repeat="video in $ctrl.videos track by $index"
       />
     </ul>`
