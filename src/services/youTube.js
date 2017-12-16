@@ -13,7 +13,10 @@ angular.module('video-player')
         videoEmbeddable: 'true'
       },
       method: 'GET'
-    }).then( (response) => { callback(response.data.items); });
+    }).then( 
+      (response) => callback(response.data.items),
+      (error) => console.log(error)
+    );
 
   };
 });
