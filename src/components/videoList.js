@@ -6,6 +6,7 @@ angular.module('video-player')
   },
 
   controller: function () {
+    this.onClick = () => {};
   },
 
   template: 
